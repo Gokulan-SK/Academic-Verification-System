@@ -1,0 +1,76 @@
+/* request-submission.css */
+
+.container.request-submission {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container.request-submission h1 {
+    text-align: center;
+    color: #333;
+}
+
+.container.request-submission label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.container.request-submission input[type="text"],
+.container.request-submission input[type="date"],
+.container.request-submission input[type="file"],
+.container.request-submission input[type="submit"] {
+    width: calc(100% - 24px); /* Adjust for padding and border */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.container.request-submission input[type="text"],
+.container.request-submission input[type="date"] {
+    background-color: #f9f9f9;
+}
+
+.container.request-submission input[type="file"] {
+    background-color: #f0f0f0;
+}
+
+.container.request-submission input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container.request-submission input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.container.request-submission .success-message {
+    position: relative;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container.request-submission .close-btn {
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+}

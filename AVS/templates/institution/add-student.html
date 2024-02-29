@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Student</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/institution/add-student.css' %}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Add Student</h1>
+      <!-- Display success message if it exists -->
+      {% if success_message %}
+      <div id="successMessage" class="success-message">
+        <span>{{ success_message }}</span>
+        <span
+          class="close-button"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+      </div>
+      {% endif %} {% if error_message %}
+      <div class="success-message" id="errorMessage">
+        <!-- Changed class to "error-message" -->
+        <span>{{ error_message }}</span>
+        <span
+          class="close-button"
+          onclick="this.parentElement.style.display='none';"
+          style="cursor: pointer"
+          >&times;</span
+        >
+      </div>
+      {% endif %}
+      <form id="studentForm" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="roll_number">Roll Number:</label>
+        <input type="text" id="roll_number" name="roll_number" required />
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="enrollment_date">Enrollment Date:</label>
+        <input
+          type="date"
+          id="enrollment_date"
+          name="enrollment_date"
+          required
+        />
+
+        <label for="graduation_date">Graduation Date:</label>
+        <input
+          type="date"
+          id="graduation_date"
+          name="graduation_date"
+          required
+        />
+
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course" required />
+
+        <label for="degree">Degree:</label>
+        <input type="text" id="degree" name="degree" required />
+
+        <label for="degree_certificate">Degree Certificate:</label>
+        <input
+          type="file"
+          id="degree_certificate"
+          name="degree_certificate"
+          required
+        />
+
+        <label for="transcript">Transcript:</label>
+        <input type="file" id="transcript" name="transcript" required />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <script src="{% static 'js/institution/add-student.js' %}"></script>
+  </body>
+</html>

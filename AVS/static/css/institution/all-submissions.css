@@ -1,0 +1,56 @@
+/* all-document-requests.css */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styles */
+.container {
+    max-width: 800px; /* Adjusted max-width */
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    max-width: 30px; /* Adjust the maximum width of table cells */
+    word-wrap: break-word; /* Enable text wrapping */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Link styles */
+a {
+    text-decoration: none;
+    color: #007bff; /* Bootstrap blue color */
+}
+
+a:hover {
+    text-decoration: underline;
+}

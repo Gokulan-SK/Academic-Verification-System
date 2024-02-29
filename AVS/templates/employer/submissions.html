@@ -1,0 +1,50 @@
+{% extends 'employer/emp-base.html' %} {% load static %} {% block title %}
+Document Submissions {% endblock %} {% block extra_css %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/employer/submissions.css' %}"
+/>
+{% endblock %} {% block content %}
+<div class="container">
+  <h1>Your Document Submissions</h1>
+  {% if submissions %}
+  <table>
+    <thead>
+      <tr>
+        <th>Roll Number</th>
+        <th>Transcript</th>
+        <th>Certificate</th>
+        <th>Status</th>
+        <th>Faulty Document</th>
+        <th>Submission Time</th>
+        <!-- Add this column for submission time -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for submission in submissions %}
+      <tr>
+        <td>{{ submission.roll_number }}</td>
+        <td>
+          <a href="{{ submission.transcript.url }}"
+            >{{ submission.transcript.name }}</a
+          >
+        </td>
+        <td>
+          <a href="{{ submission.certificate.url }}"
+            >{{ submission.certificate.name }}</a
+          >
+        </td>
+        <td>{{ submission.get_status_display }}</td>
+        <td>{{ submission.faulty_document }}</td>
+        <td>{{ submission.submission_time }}</td>
+        <!-- Display submission time -->
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>No document submissions found.</p>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'employer/emp-base.html' %} {% load static %} {% block title %}
+Employer Document Submission {% endblock %} {% block extra_css %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/employer/request-submission.css' %}"
+/>
+{% endblock %} {% block content %}
+<div class="container request-submission">
+  <h1>Document Submission</h1>
+  <!-- Display success message if it exists -->
+  {% if success_message %}
+  <div class="success-message">
+    <span>{{ success_message }}</span>
+    <span
+      class="close-button"
+      onclick="this.parentElement.style.display='none';"
+      style="cursor: pointer"
+      >&times;</span
+    >
+  </div>
+  {% endif %}
+  <!-- Display error message if it exists -->
+  {% if error_message %}
+  <div class="error-message">
+    <span>{{ error_message }}</span>
+    <span
+      class="close-button"
+      onclick="this.parentElement.style.display='none';"
+      style="cursor: pointer"
+      >&times;</span
+    >
+  </div>
+  {% endif %}
+  <form id="documentForm" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- Your form fields here -->
+    <label for="roll_number">Roll Number:</label>
+    <input type="text" id="roll_number" name="roll_number" required />
+
+    <label for="transcript">Transcript:</label>
+    <input type="file" id="transcript" name="transcript" required />
+
+    <label for="certificate">Degree Certificate:</label>
+    <input type="file" id="certificate" name="certificate" required />
+
+    <input type="submit" value="Submit" />
+  </form>
+
+  {% endblock %} {% block extra_js %}
+  <script src="{% static 'js/employer/request-submission.js' %}"></script>
+  {% endblock %}
+</div>

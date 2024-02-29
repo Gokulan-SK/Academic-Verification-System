@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'css/institution/dashboard.css' %}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Options</h1>
+      <ul>
+        <li><a href="{% url 'add_student' %}">Add Student</a></li>
+        <li>
+          <a href="{% url 'modify_student' %}">Modify Student Record</a>
+        </li>
+        <li>
+          <a href="{% url 'delete_student' %}">Delete Student Record</a>
+        </li>
+        <li><a href="{% url 'all_submissions' %}">View All Requests</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Document Requests</title>
+    <!-- Link to CSS file -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/institution/all-submissions.css' %}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>All Document Requests</h1>
+      {% if all_submissions %}
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Roll Number</th>
+            <th>Transcript</th>
+            <th>Certificate</th>
+            <th>Status</th>
+            <th>Faulty Document</th>
+            <th>Submission Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for request in all_submissions %}
+          <tr>
+            <td>{{ request.submitted_by.username }}</td>
+            <td>{{ request.roll_number }}</td>
+            <td>
+              <a href="{{ request.transcript.url }}"
+                >{{ request.transcript.name }}</a
+              >
+            </td>
+            <td>
+              <a href="{{ request.certificate.url }}"
+                >{{ request.certificate.name }}</a
+              >
+            </td>
+            <td>{{ request.get_status_display }}</td>
+            <td>{{ request.faulty_document }}</td>
+            <td>{{ request.submission_time }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p>No document requests found.</p>
+      {% endif %}
+    </div>
+    <!-- Link to JS file -->
+    <script src="{% static 'js/institution/all-submissions.js' %}"></script>
+  </body>
+</html>

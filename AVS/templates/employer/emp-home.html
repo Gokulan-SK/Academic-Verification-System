@@ -1,0 +1,12 @@
+{% extends 'employer/emp-base.html' %} {% load static %} {% block title %}
+Employer Home {% endblock %} {% block content %}
+<div class="employer-home-content">
+  <h1>Welcome, Employer!</h1>
+  <h2>Navigation</h2>
+  <ul>
+    <li><a href="{% url 'request_submission' %}">Request Submission</a></li>
+    <li><a href="{% url 'submissions' %}">Check Submissions</a></li>
+  </ul>
+</div>
+
+{% endblock %}

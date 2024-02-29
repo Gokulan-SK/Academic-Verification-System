@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modify Student</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/institution/modify-student.css' %}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Modify Student</h1>
+      {% if success_message %}
+      <div id="successMessage" class="success-message">
+        <span>{{ success_message }}</span>
+        <span
+          class="close-button"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+      </div>
+      {% endif %} {% if error_message %}
+      <div class="error-message">
+        <span>{{ error_message }}</span>
+        <span
+          class="close-button"
+          onclick="this.parentElement.style.display='none';"
+          style="cursor: pointer"
+          >&times;</span
+        >
+      </div>
+      {% endif %}
+      <form id="studentForm" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="id_roll_number">Roll Number:</label>
+        <input
+          type="text"
+          id="id_roll_number"
+          name="roll_number"
+          value="{{ student.roll_number }}"
+          required
+        />
+
+        <label for="id_name">Name:</label>
+        <input
+          type="text"
+          id="id_name"
+          name="name"
+          value="{{ student.name }}"
+          required
+        />
+
+        <label for="id_graduation_date">Graduation Date:</label>
+        <input
+          type="date"
+          id="id_graduation_date"
+          name="graduation_date"
+          value="{{ student.graduation_date }}"
+          required
+        />
+
+        <label for="id_enrollment_date">Enrollment Date:</label>
+        <input
+          type="date"
+          id="id_enrollment_date"
+          name="enrollment_date"
+          value="{{ student.enrollment_date }}"
+          required
+        />
+
+        <label for="id_course">Course:</label>
+        <input
+          type="text"
+          id="id_course"
+          name="course"
+          value="{{ student.course }}"
+          required
+        />
+
+        <label for="id_degree">Degree:</label>
+        <input
+          type="text"
+          id="id_degree"
+          name="degree"
+          value="{{ student.degree }}"
+          required
+        />
+
+        <label for="id_degree_certificate">Degree Certificate:</label>
+        <input
+          type="file"
+          id="id_degree_certificate"
+          name="degree_certificate"
+          required
+        />
+
+        <label for="id_transcript">Transcript:</label>
+        <input type="file" id="id_transcript" name="transcript" required />
+
+        <button type="submit">Update</button>
+      </form>
+    </div>
+    <script src="{% static 'js/institution/modify-student.js' %}"></script>
+  </body>
+</html>

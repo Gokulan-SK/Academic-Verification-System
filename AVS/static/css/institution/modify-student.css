@@ -1,0 +1,98 @@
+/* modify-student.css */
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+h1 {
+    text-align: center;
+}
+
+/* Form Labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="date"],
+input[type="file"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Select */
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Submit Button */
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Success and Error Messages */
+.success-message,
+.error-message {
+    position: relative;
+    background-color: #4CAF50; /* Green for success, you can modify this */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Add some space below the message */
+}
+
+.close-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+}
